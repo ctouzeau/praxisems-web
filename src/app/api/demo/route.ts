@@ -11,7 +11,7 @@ export async function POST(req: Request) {
 
   try {
     await resend.emails.send({
-      from: "PraxisEMS <noreply@praxisems.com>",
+      from: "PraxisEMS <noreply@touzeauconsulting.com>",
       to: ["touzeauc@gmail.com"],
       subject: `Demo request — ${program}`,
       html: `
@@ -22,7 +22,7 @@ export async function POST(req: Request) {
     });
 
     await resend.emails.send({
-      from: "PraxisEMS <noreply@praxisems.com>",
+      from: "PraxisEMS <noreply@touzeauconsulting.com>",
       to: [email],
       subject: "We got your demo request",
       html: `
