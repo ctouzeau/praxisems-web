@@ -101,6 +101,39 @@ a { color: inherit; text-decoration: none; }
   text-transform: uppercase;
 }
 
+/* ── Responsive ── */
 @media (max-width: 768px) {
   :root { --section-py: 64px; }
+
+  /* Nav */
+  .nav-desktop    { display: none !important; }
+  .nav-mobile     { display: flex !important; }
+  .nav-cta-btn    { display: none !important; }
+
+  /* Hero */
+  .hero-grid      { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+
+  /* Problem */
+  .problem-grid   { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+
+  /* Features */
+  .features-grid  { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* Pricing FAQ */
+  .pricing-faq    { grid-template-columns: 1fr !important; }
+}
+
+@media (min-width: 769px) {
+  .nav-desktop    { display: flex !important; }
+  .nav-mobile     { display: none !important; }
+  .nav-cta-btn    { display: inline-flex !important; }
+}
+
+@media (max-width: 560px) {
+  /* Hero */
+  .hero-mockup    { display: none !important; }
+  .hero-section   { padding-top: calc(64px + 48px) !important; padding-bottom: 56px !important; }
+
+  /* Features */
+  .features-grid  { grid-template-columns: 1fr !important; }
 }

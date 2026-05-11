@@ -63,7 +63,7 @@ export default function Nav() {
 
         {/* CTA */}
         <div style={{ display: "flex", alignItems: "center", gap: ".75rem" }}>
-          <Link href="/demo" className="btn-primary" style={{ padding: ".5rem 1.25rem", fontSize: ".875rem" }}>
+          <Link href="/demo" className="btn-primary nav-cta-btn" style={{ padding: ".5rem 1.25rem", fontSize: ".875rem" }}>
             Book a Demo
           </Link>
           {/* Mobile hamburger */}
@@ -107,14 +107,6 @@ export default function Nav() {
         </div>
       )}
 
-      <style>{`
-        .nav-desktop { display: flex; }
-        .nav-mobile  { display: none; }
-        @media (max-width: 640px) {
-          .nav-desktop { display: none; }
-          .nav-mobile  { display: flex; }
-        }
-      `}</style>
     </nav>
   );
 }

@@ -149,11 +149,6 @@ export default function Pricing() {
         </div>
       </div>
 
-      <style>{`
-        @media (max-width: 560px) {
-          .pricing-faq { grid-template-columns: 1fr !important; }
-        }
-      `}</style>
     </section>
   );
 }

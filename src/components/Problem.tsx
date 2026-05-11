@@ -63,11 +63,6 @@ export default function Problem() {
         </div>
       </div>
 
-      <style>{`
-        @media (max-width: 768px) {
-          .problem-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
-        }
-      `}</style>
     </section>
   );
 }

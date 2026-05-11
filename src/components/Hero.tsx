@@ -226,18 +226,6 @@ export default function Hero() {
         </div>
       </div>
 
-      <style>{`
-        @media (max-width: 768px) {
-          .hero-grid {
-            grid-template-columns: 1fr !important;
-            gap: 2.5rem !important;
-          }
-        }
-        @media (max-width: 560px) {
-          .hero-mockup { display: none !important; }
-          .hero-section { padding-top: calc(64px + 48px) !important; padding-bottom: 56px !important; }
-        }
-      `}</style>
     </section>
   );
 }
