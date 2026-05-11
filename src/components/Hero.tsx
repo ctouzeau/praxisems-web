@@ -139,7 +139,7 @@ function DashboardMockup() {
 
 export default function Hero() {
   return (
-    <section style={{
+    <section className="hero-section" style={{
       position: "relative",
       paddingTop: "calc(64px + 80px)",
       paddingBottom: 80,
@@ -190,6 +190,7 @@ export default function Hero() {
               lineHeight: 1.7,
               marginBottom: "2rem",
               maxWidth: 440,
+              width: "100%",
             }}>
               PraxisEMS gives paramedic programs one place to track student rotations, clinical skills, and patient contacts — with CoAEMSP-ready SMC reports on demand.
             </p>
@@ -212,7 +213,7 @@ export default function Hero() {
           </div>
 
           {/* Right: mockup */}
-          <div style={{ position: "relative" }}>
+          <div className="hero-mockup" style={{ position: "relative" }}>
             <div style={{
               position: "absolute", inset: -40,
               background: "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(245,158,11,.07), transparent)",
@@ -231,6 +232,10 @@ export default function Hero() {
             grid-template-columns: 1fr !important;
             gap: 2.5rem !important;
           }
+        }
+        @media (max-width: 560px) {
+          .hero-mockup { display: none !important; }
+          .hero-section { padding-top: calc(64px + 48px) !important; padding-bottom: 56px !important; }
         }
       `}</style>
     </section>
