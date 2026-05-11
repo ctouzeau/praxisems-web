@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 export default function DemoPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [program, setProgram] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
@@ -18,7 +19,7 @@ export default function DemoPage() {
       const res = await fetch("/api/demo", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, program }),
+        body: JSON.stringify({ name, email, phone, program }),
       });
       if (!res.ok) throw new Error();
       setStatus("success");
@@ -144,6 +145,37 @@ export default function DemoPage() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="jane@college.edu"
+                    style={{
+                      width: "100%",
+                      background: "var(--surface)",
+                      border: "1px solid var(--border)",
+                      borderRadius: 8,
+                      padding: ".6875rem .875rem",
+                      color: "var(--text)",
+                      fontSize: ".9375rem",
+                      outline: "none",
+                      boxSizing: "border-box",
+                    }}
+                    onFocus={(e) => (e.currentTarget.style.borderColor = "rgba(245,158,11,.5)")}
+                    onBlur={(e) => (e.currentTarget.style.borderColor = "var(--border)")}
+                  />
+                </div>
+
+                <div style={{ marginBottom: "1.25rem" }}>
+                  <label style={{
+                    display: "block",
+                    fontSize: ".8125rem",
+                    fontWeight: 500,
+                    color: "var(--secondary)",
+                    marginBottom: ".5rem",
+                  }}>
+                    Phone number <span style={{ color: "var(--muted)", fontWeight: 400 }}>(optional)</span>
+                  </label>
+                  <input
+                    type="tel"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    placeholder="(555) 867-5309"
                     style={{
                       width: "100%",
                       background: "var(--surface)",
