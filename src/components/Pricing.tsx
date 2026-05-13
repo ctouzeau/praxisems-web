@@ -25,8 +25,11 @@ export default function Pricing() {
           <h2 style={{ fontSize: "clamp(1.875rem, 3.5vw, 2.75rem)", color: "var(--text)", marginBottom: "1rem" }}>
             Simple, honest pricing.
           </h2>
-          <p style={{ color: "var(--secondary)", fontSize: "1.0625rem", maxWidth: 460, margin: "0 auto" }}>
-            One flat rate per student seat. No monthly subscription. No per-module fees. Just pay when your cohort starts.
+          <p style={{ color: "var(--secondary)", fontSize: "1.0625rem", maxWidth: 520, margin: "0 auto 1.25rem" }}>
+            Most programs spend dozens of faculty hours each semester compiling SMC reports, chasing documentation, and reconciling spreadsheets. PraxisEMS eliminates that overhead — one unified system, one flat fee.
+          </p>
+          <p style={{ color: "var(--secondary)", fontSize: ".9375rem", maxWidth: 420, margin: "0 auto" }}>
+            No monthly subscription. No per-module fees. No per-faculty seat. Just pay when your cohort starts.
           </p>
         </div>
 

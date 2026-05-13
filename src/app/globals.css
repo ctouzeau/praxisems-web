@@ -133,6 +133,16 @@ a { color: inherit; text-decoration: none; }
   /* CTA */
   .cta-grid        { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
   .cta-screenshot  { display: none !important; }
+
+  /* WhyPraxis */
+  .why-praxis-grid { grid-template-columns: 1fr !important; gap: 1.25rem !important; }
+
+  /* Comparison */
+  .comparison-grid { grid-template-columns: 1fr !important; }
+  .comparison-grid > div:first-child { border-right: none !important; border-bottom: 1px solid var(--border); }
+
+  /* Footer */
+  .footer-grid     { grid-template-columns: 1fr 1fr !important; gap: 2rem !important; }
 }
 
 @media (min-width: 769px) {
