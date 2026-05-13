@@ -1,22 +1,73 @@
 "use client";
 
+import { useState } from "react";
+
 function FeatureIcon({ path }: { path: string | string[] }) {
   const paths = Array.isArray(path) ? path : [path];
   return (
     <div style={{
-      width: 44, height: 44,
-      background: "rgba(245,158,11,.1)",
-      border: "1px solid rgba(245,158,11,.2)",
-      borderRadius: 11,
+      width: 46, height: 46,
+      background: "rgba(245,158,11,.12)",
+      border: "1px solid rgba(245,158,11,.28)",
+      borderRadius: 12,
       display: "flex", alignItems: "center", justifyContent: "center",
-      marginBottom: "1.25rem",
+      marginBottom: "1.375rem",
       flexShrink: 0,
     }}>
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+      <svg width="22" height="22" viewBox="0 0 20 20" fill="none">
         {paths.map((p, i) => (
           <path key={i} d={p} stroke="#f59e0b" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         ))}
       </svg>
+    </div>
+  );
+}
+
+function FeatureCard({ f }: { f: typeof features[0] }) {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        background: "var(--elevated)",
+        border: `1px solid ${hovered ? "rgba(245,158,11,.38)" : "var(--border)"}`,
+        borderRadius: 14,
+        padding: "2rem",
+        transition: "border-color .18s, transform .18s, box-shadow .18s",
+        transform: hovered ? "translateY(-2px)" : "translateY(0)",
+        boxShadow: hovered ? "0 8px 28px rgba(0,0,0,.28)" : "none",
+      }}
+    >
+      <FeatureIcon path={f.icon} />
+      <p style={{
+        fontSize: ".6875rem",
+        fontFamily: "var(--font-mono)",
+        color: "rgba(245,158,11,.6)",
+        letterSpacing: ".09em",
+        textTransform: "uppercase",
+        marginBottom: ".5rem",
+      }}>
+        {f.title}
+      </p>
+      <h3 style={{
+        fontFamily: "var(--font-body)",
+        fontSize: "1rem",
+        fontWeight: 600,
+        color: "var(--text)",
+        lineHeight: 1.4,
+        marginBottom: ".625rem",
+      }}>
+        {f.headline}
+      </h3>
+      <p style={{
+        color: "var(--secondary)",
+        fontSize: ".875rem",
+        lineHeight: 1.7,
+        margin: 0,
+      }}>
+        {f.support}
+      </p>
     </div>
   );
 }
@@ -62,10 +113,12 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="features" style={{ padding: "var(--section-py) 0" }}>
+    <section id="features" style={{
+      padding: "var(--section-py) 0",
+      borderTop: "1px solid var(--border)",
+    }}>
       <div className="container">
-        {/* Section header */}
-        <div style={{ textAlign: "center", marginBottom: "3.5rem" }}>
+        <div style={{ textAlign: "center", marginBottom: "4rem" }}>
           <div className="label-tag" style={{ marginBottom: "1.25rem" }}>Features</div>
           <h2 style={{ fontSize: "clamp(1.875rem, 3.5vw, 2.75rem)", color: "var(--text)", marginBottom: "1rem" }}>
             Everything your program needs.<br />Nothing it doesn&apos;t.
@@ -75,52 +128,16 @@ export default function Features() {
           </p>
         </div>
 
-        {/* Feature grid */}
         <div style={{
           display: "grid",
           gridTemplateColumns: "repeat(3, 1fr)",
-          gap: "1.5rem",
+          gap: "1.25rem",
         }} className="features-grid">
           {features.map((f, i) => (
-            <div key={i} style={{
-              background: "var(--elevated)",
-              border: "1px solid var(--border)",
-              borderRadius: 14,
-              padding: "1.75rem",
-              transition: "border-color .15s",
-            }}
-              onMouseEnter={(e) => (e.currentTarget.style.borderColor = "rgba(245,158,11,.35)")}
-              onMouseLeave={(e) => (e.currentTarget.style.borderColor = "var(--border)")}
-            >
-              <FeatureIcon path={f.icon} />
-              <p style={{
-                fontSize: ".6875rem",
-                fontFamily: "var(--font-mono)",
-                color: "var(--muted)",
-                letterSpacing: ".08em",
-                textTransform: "uppercase",
-                marginBottom: ".5rem",
-              }}>
-                {f.title}
-              </p>
-              <h3 style={{
-                fontFamily: "var(--font-body)",
-                fontSize: ".9375rem",
-                fontWeight: 600,
-                color: "var(--text)",
-                lineHeight: 1.45,
-                marginBottom: ".5rem",
-              }}>
-                {f.headline}
-              </h3>
-              <p style={{ color: "var(--secondary)", fontSize: ".875rem", lineHeight: 1.65 }}>
-                {f.support}
-              </p>
-            </div>
+            <FeatureCard key={i} f={f} />
           ))}
         </div>
       </div>
-
     </section>
   );
 }
