@@ -202,7 +202,7 @@ export default function Hero() {
               maxWidth: 440,
               width: "100%",
             }}>
-              PraxisEMS gives paramedic programs one place to track student rotations, clinical skills, and patient contacts — with CoAEMSP-ready SMC reports on demand.
+              PraxisEMS is the operational platform built for paramedic programs — rotation scheduling, clinical documentation, and accreditation reporting without the administrative overhead.
             </p>
             <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
               <Link href="/demo" className="btn-primary">
@@ -218,7 +218,7 @@ export default function Hero() {
               fontSize: ".8125rem",
               color: "var(--muted)",
             }}>
-              $99 per seat · One-time per cohort · No subscription required
+              $99 per seat · One-time payment · No subscription
             </p>
           </div>
 

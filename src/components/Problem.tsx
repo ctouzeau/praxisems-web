@@ -1,19 +1,47 @@
-export default function Problem() {
-  const pains = [
-    {
-      icon: "📋",
-      text: "Manually compiling the Student Mastery Checklist from spreadsheets before every site visit.",
-    },
-    {
-      icon: "📧",
-      text: "Chasing students for rotation logs and paper sign-off sheets weeks after their shifts.",
-    },
-    {
-      icon: "📊",
-      text: "No real-time visibility into which students are behind — until it's too late to intervene.",
-    },
-  ];
+function PainIcon({ paths }: { paths: string[] }) {
+  return (
+    <div style={{
+      width: 38, height: 38, flexShrink: 0,
+      background: "rgba(245,158,11,.08)",
+      border: "1px solid rgba(245,158,11,.22)",
+      borderRadius: 9,
+      display: "flex", alignItems: "center", justifyContent: "center",
+    }}>
+      <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+        {paths.map((d, i) => (
+          <path key={i} d={d} stroke="#f59e0b" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        ))}
+      </svg>
+    </div>
+  );
+}
 
+const pains = [
+  {
+    paths: [
+      "M9 5H7a1 1 0 00-1 1v10a1 1 0 001 1h6a1 1 0 001-1V6a1 1 0 00-1-1h-2",
+      "M9 5a1 1 0 001 1h0a1 1 0 001-1V4a1 1 0 00-1-1h0a1 1 0 00-1 1v1z",
+      "M7 10h6M7 13h4",
+    ],
+    text: "Manually compiling the Student Mastery Checklist from spreadsheets before every site visit.",
+  },
+  {
+    paths: [
+      "M6 2v4M14 2v4M3 8h14M5 4H3a1 1 0 00-1 1v12a1 1 0 001 1h14a1 1 0 001-1V5a1 1 0 00-1-1h-2",
+      "M10 12v2M10 16h.01",
+    ],
+    text: "Chasing students for rotation logs and paper sign-off sheets weeks after their shifts.",
+  },
+  {
+    paths: [
+      "M3 17l4-6 3 3 3-5 4 8",
+      "M3 3v14h14",
+    ],
+    text: "No real-time visibility into which students are behind — until it's too late to intervene.",
+  },
+];
+
+export default function Problem() {
   return (
     <section style={{
       padding: "var(--section-py) 0",
@@ -53,8 +81,8 @@ export default function Problem() {
                 borderRadius: 12,
                 padding: "1.125rem 1.25rem",
               }}>
-                <span style={{ fontSize: "1.25rem", flexShrink: 0, marginTop: 1 }}>{pain.icon}</span>
-                <p style={{ color: "var(--secondary)", fontSize: ".9375rem", lineHeight: 1.6 }}>
+                <PainIcon paths={pain.paths} />
+                <p style={{ color: "var(--secondary)", fontSize: ".9375rem", lineHeight: 1.6, margin: 0 }}>
                   {pain.text}
                 </p>
               </div>
@@ -62,7 +90,6 @@ export default function Problem() {
           </div>
         </div>
       </div>
-
     </section>
   );
 }
