@@ -121,6 +121,9 @@ a { color: inherit; text-decoration: none; }
 
   /* Pricing FAQ */
   .pricing-faq    { grid-template-columns: 1fr !important; }
+
+  /* Trust signals */
+  .trust-grid     { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
 }
 
 @media (min-width: 769px) {
