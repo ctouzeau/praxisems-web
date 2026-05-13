@@ -2,6 +2,7 @@ import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import Problem from "@/components/Problem";
 import Features from "@/components/Features";
+import Outcomes from "@/components/Outcomes";
 import Screenshots from "@/components/Screenshots";
 import HowItWorks from "@/components/HowItWorks";
 import TrustBand from "@/components/TrustBand";
@@ -17,6 +18,7 @@ export default function Home() {
         <Hero />
         <Problem />
         <Features />
+        <Outcomes />
         <Screenshots />
         <HowItWorks />
         <TrustBand />
