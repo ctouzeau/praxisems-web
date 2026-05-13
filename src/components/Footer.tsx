@@ -15,16 +15,21 @@ export default function Footer() {
         gap: "1.25rem",
       }}>
         {/* Logo */}
-        <Link href="/" style={{ display: "flex", alignItems: "center", gap: ".5rem" }}>
+        <Link href="/" style={{ display: "flex", alignItems: "center", gap: ".625rem" }}>
           <div style={{
-            width: 24, height: 24, background: "#d97706", borderRadius: 6,
-            display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
+            width: 26, height: 26,
+            background: "linear-gradient(145deg, #f59e0b 0%, #d97706 100%)",
+            borderRadius: 7,
+            display: "flex", alignItems: "center", justifyContent: "center",
+            flexShrink: 0,
           }}>
-            <svg width="12" height="12" viewBox="0 0 20 20" fill="none">
-              <path d="M10 2L3 7v11h5v-5h4v5h5V7L10 2z" fill="white" opacity=".9" />
+            <svg width="13" height="13" viewBox="0 0 20 20" fill="none">
+              <rect x="2"  y="13" width="4" height="6"  rx="1.5" fill="white"/>
+              <rect x="8"  y="8"  width="4" height="11" rx="1.5" fill="white"/>
+              <rect x="14" y="2"  width="4" height="17" rx="1.5" fill="white"/>
             </svg>
           </div>
-          <span style={{ fontFamily: "var(--font-display)", fontSize: ".9375rem", color: "var(--secondary)" }}>
+          <span style={{ fontFamily: "var(--font-display)", fontSize: ".9375rem", color: "var(--secondary)", letterSpacing: "-.01em" }}>
             PraxisEMS
           </span>
         </Link>

@@ -53,7 +53,17 @@ function DashboardMockup() {
           display: "flex", flexDirection: "column",
         }}>
           <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 18, paddingLeft: 6 }}>
-            <div style={{ width: 18, height: 18, background: "#d97706", borderRadius: 4, flexShrink: 0 }} />
+            <div style={{
+              width: 18, height: 18, borderRadius: 4, flexShrink: 0,
+              background: "linear-gradient(145deg, #f59e0b 0%, #d97706 100%)",
+              display: "flex", alignItems: "center", justifyContent: "center",
+            }}>
+              <svg width="9" height="9" viewBox="0 0 20 20" fill="none">
+                <rect x="2"  y="13" width="4" height="6"  rx="1.5" fill="white"/>
+                <rect x="8"  y="8"  width="4" height="11" rx="1.5" fill="white"/>
+                <rect x="14" y="2"  width="4" height="17" rx="1.5" fill="white"/>
+              </svg>
+            </div>
             <div style={{ width: 72, height: 8, background: "#1e2940", borderRadius: 2 }} />
           </div>
           {navItems.map((item, i) => (

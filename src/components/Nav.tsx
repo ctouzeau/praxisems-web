@@ -32,16 +32,22 @@ export default function Nav() {
         height: 64,
       }}>
         {/* Logo */}
-        <Link href="/" style={{ display: "flex", alignItems: "center", gap: ".5rem" }}>
+        <Link href="/" style={{ display: "flex", alignItems: "center", gap: ".625rem" }}>
           <div style={{
-            width: 28, height: 28, background: "#d97706", borderRadius: 7,
-            display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
+            width: 30, height: 30,
+            background: "linear-gradient(145deg, #f59e0b 0%, #d97706 100%)",
+            borderRadius: 8,
+            display: "flex", alignItems: "center", justifyContent: "center",
+            flexShrink: 0,
+            boxShadow: "0 1px 4px rgba(217,119,6,.35)",
           }}>
-            <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
-              <path d="M10 2L3 7v11h5v-5h4v5h5V7L10 2z" fill="white" opacity=".9" />
+            <svg width="15" height="15" viewBox="0 0 20 20" fill="none">
+              <rect x="2"  y="13" width="4" height="6"  rx="1.5" fill="white"/>
+              <rect x="8"  y="8"  width="4" height="11" rx="1.5" fill="white"/>
+              <rect x="14" y="2"  width="4" height="17" rx="1.5" fill="white"/>
             </svg>
           </div>
-          <span style={{ fontFamily: "var(--font-display)", fontSize: "1.0625rem", color: "var(--text)" }}>
+          <span style={{ fontFamily: "var(--font-display)", fontSize: "1.0625rem", color: "var(--text)", letterSpacing: "-.01em" }}>
             PraxisEMS
           </span>
         </Link>
